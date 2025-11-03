@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul di tab browser -->
+    <title>Nurul</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts (Inter dan Merriweather) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Mengatur font default ke Merriweather untuk teks utama */
+        body {
+            font-family: 'Merriweather', serif;
+        }
+        /* Kelas helper untuk font Inter */
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Menyembunyikan surat awalnya */
+        #surat-konten {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-rose-50 min-h-screen flex items-center justify-center p-6 sm:p-12">
+
+    <!-- Tombol untuk Memulai (Overlay) -->
+    <div id="overlay" class="fixed inset-0 bg-rose-50 flex flex-col items-center justify-center z-50">
+        <div class="text-center">
+            <h2 class="font-inter text-3xl font-bold text-rose-700 mb-4">Sebuah Pesan Untukmu</h2>
+            <p class="text-rose-600 mb-8">Klik untuk membuka</p>
+            <button id="buka-pesan" class="bg-rose-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-rose-600 transition-all duration-300 flex items-center space-x-2 font-inter">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>Buka Pesan</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Musik Latar (Akan diputar oleh JavaScript) -->
+    <iframe id="music-player" width="0" height="0" 
+            src="about:blank" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen 
+            style="position: absolute; left: -9999px;">
+    </iframe>
+
+    <!-- Kontainer utama, seperti selembar surat (awalnya tersembunyi) -->
+    <main id="surat-konten" class="bg-white max-w-2xl w-full p-8 sm:p-12 rounded-2xl shadow-lg">
+        
+        <!-- Hiasan Hati di Atas -->
+        <div class="text-center mb-8">
+            <svg class="w-12 h-12 text-rose-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            <!-- Judul H1 -->
+            <h1 class="font-inter text-2xl sm:text-3xl font-bold text-rose-800 mt-4">
+                Nurul
+            </h1>
+        </div>
+
+        <!-- Isi Pesan -->
+        <div class="space-y-6 text-rose-900 text-base sm:text-lg leading-relaxed">
+            <p>Nurul, terima kasih banyak sudah membangkitkan semangatku lagi dan menyembuhkan luka lamaku.</p>
+            
+            <p>Sebulan sebelumnya, aku berdoa agar ada seseorang yang bisa membuatku melupakan hal yang sangat sulit kulupakan, dan semua detailnya ada pada dirimu.</p>
+            
+            <p>Saat bertemu aku disambut. Saat pulang aku diperhatikan. Saat sendiri ada yang menemaniku. Saat aku salah ada yang mengingatkanku. Hidupku terasa hangat. Aku belum pernah merasakan hal ini sebelumnya.</p>
+            
+            <p>Aku yang sudah terbiasa melakukan segalanya sendiri, kini merasa ada yang selalu mendukung dan menemaniku.</p>
+            
+            <p>Semenjak kejadian itu, aku sempat hancur dan kehilangan arah karena sangat kecewa. Padahal, aku melakukan semua itu hanya untuk membahagiakannya. Sekolahku jadi berantakan, pekerjaanku kacau. Seakan tujuan hidupku hilang begitu saja.</p>
+            
+            <p>Nurul cantik, aku sebenarnya bingung untuk apa kehadiranku di dunia ini. Aku selalu sendiri, tidak ada orang yang bisa kuajak bicara. Seakan-akan kehadiranku tidak diharapkan.</p>
+            
+            <p>Aku berusaha sendiri dalam segala hal, tapi selalu dimarahi jika ada kesalahan. Padahal, aku berjuang sendiri tanpa ada yang membimbing. Tapi mengapa saat aku salah, aku dimarahi? Mereka tidak pernah tahu apa yang sebenarnya kualami, tidak pernah tahu masalah yang kuhadapi.</p>
+            
+            <p>Aku sebenarnya sudah sangat lelah. Jika bukan karena agama, mungkin aku sudah mengakhiri semuanya.</p>
+            
+            <p>Kamu adalah alasan aku hidup.</p>
+            
+            <p>Kamu adalah alasan mengapa aku harus semangat.</p>
+            
+            <p>Tapi yang jelas dan yang lebih utama, aku ingin kamu bahagia, aku ingin kamu meraih cita-cita, dan membanggakan orang tua.</p>
+            
+            <p>Aku sayang banget sama nurul, aku gak mau ngecewain nurull</p>
+            
+            <p class="font-bold text-xl text-center text-rose-600 my-8">
+                ♥️
+            </p>
+
+            <!-- Pemisah -->
+            <hr class="my-10 border-t-2 border-rose-200">
+            
+            <p>Mau manis atau pahit, tolong bicarain aja yaa sayang, jangan pernah ragu atau ada yang ditutup tutupin.</p>
+            
+            <p>Apapun yang nurul bicarain bakalan aku hormatin, Apapun itu.</p>
+            
+            <p class="italic">Jangan pernah ngerasa gak enakan ke aku yaa cantik ♥️</p>
+        </div>
+    </main>
+
+    <!-- JavaScript untuk memutar musik saat tombol diklik -->
+    <script>
+        const bukaButton = document.getElementById('buka-pesan');
+        const overlay = document.getElementById('overlay');
+        const suratKonten = document.getElementById('surat-konten');
+        const musicPlayer = document.getElementById('music-player');
+        
+        // Link musik instrumental (Clair de Lune)
+        const musicUrl = "https://www.youtube.com/embed/R-kZlC_KigY?autoplay=1&loop=1&playlist=R-kZlC_KigY&controls=0&iv_load_policy=3&modestbranding=1";
+
+        bukaButton.addEventListener('click', () => {
+            // 1. Sembunyikan overlay
+            overlay.style.display = 'none';
+            
+            // 2. Tampilkan surat
+            suratKonten.style.display = 'block';
+            
+            // 3. Atur sumber musik dan putar
+            // Karena ini adalah hasil dari klik pengguna, autoplay=1 akan berfungsi
+            musicPlayer.src = musicUrl;
+        });
+    </script>
+</body>
+</html>
+
+
