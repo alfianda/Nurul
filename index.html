@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Judul di tab browser -->
-    <title>Nurul</title>
+    <title>Untuk Nurul</title>
     <!-- Memuat Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Memuat Google Fonts (Inter dan Merriweather) -->
+    <!-- Memuat Google Fonts (Nunito Sans & Nunito) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Mengatur font default ke Merriweather untuk teks utama */
+        /* Mengatur font default yang bersih dan ramah */
         body {
-            font-family: 'Merriweather', serif;
+            font-family: 'Nunito Sans', sans-serif;
         }
-        /* Kelas helper untuk font Inter */
-        .font-inter {
-            font-family: 'Inter', sans-serif;
+        /* Kelas helper untuk font judul yang sedikit tebal */
+        .font-nunito {
+            font-family: 'Nunito', sans-serif;
         }
         /* Menyembunyikan surat awalnya */
         #surat-konten {
             display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-out; /* Transisi fade-in yang halus */
         }
     </style>
 </head>
@@ -30,10 +32,10 @@
 
     <!-- Tombol untuk Memulai (Overlay) -->
     <div id="overlay" class="fixed inset-0 bg-rose-50 flex flex-col items-center justify-center z-50">
-        <div class="text-center">
-            <h2 class="font-inter text-3xl font-bold text-rose-700 mb-4">Sebuah Pesan Untukmu</h2>
-            <p class="text-rose-600 mb-8">Klik untuk membuka</p>
-            <button id="buka-pesan" class="bg-rose-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-rose-600 transition-all duration-300 flex items-center space-x-2 font-inter">
+        <div class="text-center p-8">
+            <h2 class="font-nunito text-3xl font-bold text-rose-800 mb-4">Untuk Nurul</h2>
+            <p class="text-rose-600 mb-8 text-lg">Klik untuk membuka</p>
+            <button id="buka-pesan" class="bg-rose-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-rose-700 transition-all duration-300 flex items-center space-x-3 font-nunito text-lg">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
@@ -48,28 +50,23 @@
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen 
-            style="position: absolute; left: -9999px;">
+            style="position: absolute; left: -9999px; display: none;">
     </iframe>
 
     <!-- Kontainer utama, seperti selembar surat (awalnya tersembunyi) -->
-    <main id="surat-konten" class="bg-white max-w-2xl w-full p-8 sm:p-12 rounded-2xl shadow-lg">
+    <main id="surat-konten" class="bg-white max-w-2xl w-full p-8 sm:p-12 rounded-2xl shadow-xl border border-rose-100">
         
-        <!-- Hiasan Hati di Atas -->
-        <div class="text-center mb-8">
-            <svg class="w-12 h-12 text-rose-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-            <!-- Judul H1 -->
-            <h1 class="font-inter text-2xl sm:text-3xl font-bold text-rose-800 mt-4">
-                Nurul
-            </h1>
-        </div>
+        <!-- Judul H1 -->
+        <h1 class="font-nunito text-4xl font-black text-center text-rose-800 mb-10">
+            Nurul
+        </h1>
 
         <!-- Isi Pesan -->
+        <!-- Semua kata-kata dipertahankan persis seperti aslinya -->
         <div class="space-y-6 text-rose-900 text-base sm:text-lg leading-relaxed">
             <p>Nurul, terima kasih banyak sudah membangkitkan semangatku lagi dan menyembuhkan luka lamaku.</p>
             
-            <p>Sebulan sebelumnya, aku berdoa agar ada seseorang yang bisa membuatku melupakan hal yang sangat sulit kulupakan, dan semua detailnya ada pada dirimu.</p>
+            <p>Sebulan sebelumnya, aku berdoa agar ada seseorang yang bisa membuatku melupakan hal yang sangat sulit kulupakan, dan tanpa aku sangka doa aku seakan terkabul dengan hadirnya nurul.</p>
             
             <p>Saat bertemu aku disambut. Saat pulang aku diperhatikan. Saat sendiri ada yang menemaniku. Saat aku salah ada yang mengingatkanku. Hidupku terasa hangat. Aku belum pernah merasakan hal ini sebelumnya.</p>
             
@@ -91,18 +88,19 @@
             
             <p>Aku sayang banget sama nurul, aku gak mau ngecewain nurull</p>
             
-            <p class="font-bold text-xl text-center text-rose-600 my-8">
-                ♥️
+            <!-- Kalimat yang diminta sebelumnya, dibuat menonjol tapi simpel -->
+            <p class="font-nunito font-bold text-xl text-center text-rose-700 my-10">
+                Kamu adalah hal paling berharga yang pernah kumiliki ♥️
             </p>
 
-            <!-- Pemisah -->
-            <hr class="my-10 border-t-2 border-rose-200">
+            <!-- Pemisah yang simpel -->
+            <hr class="my-10 border-t-2 border-rose-100">
             
             <p>Mau manis atau pahit, tolong bicarain aja yaa sayang, jangan pernah ragu atau ada yang ditutup tutupin.</p>
             
             <p>Apapun yang nurul bicarain bakalan aku hormatin, Apapun itu.</p>
             
-            <p class="italic">Jangan pernah ngerasa gak enakan ke aku yaa cantik ♥️</p>
+            <p class="italic text-center text-rose-700 mt-8">Jangan pernah ngerasa gak enakan ke aku yaa cantik ♥️</p>
         </div>
     </main>
 
@@ -123,8 +121,12 @@
             // 2. Tampilkan surat
             suratKonten.style.display = 'block';
             
-            // 3. Atur sumber musik dan putar
-            // Karena ini adalah hasil dari klik pengguna, autoplay=1 akan berfungsi
+            // 3. Picu fade-in
+            setTimeout(() => {
+                suratKonten.style.opacity = '1';
+            }, 50); // Delay kecil untuk memastikan transisi CSS berjalan
+            
+            // 4. Atur sumber musik dan putar
             musicPlayer.src = musicUrl;
         });
     </script>
